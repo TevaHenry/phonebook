@@ -45,7 +45,7 @@ app.get('/api/persons/:id', (req, res, next) => {
       if (contact) {
         res.json(contact.toJSON())
       } else {
-        res.status(404).end() 
+        res.status(404).end()
       }
     })
     .catch(error => next(error))
@@ -53,7 +53,7 @@ app.get('/api/persons/:id', (req, res, next) => {
 
 app.delete('/api/persons/:id', (req, res, next) => {
   Contact.findByIdAndRemove(req.params.id)
-    .then(result => { 
+    .then(result => {
       res.status(204).end()
     })
     .catch(error => next(error))
